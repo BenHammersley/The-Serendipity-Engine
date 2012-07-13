@@ -1,0 +1,34 @@
+body {
+	background-color: white;
+	font-family: "Jugend WF";
+	font-size: 150%;
+	margin-left: 20px;
+	width: 600px;
+	text-align: center;
+}
+
+form {
+	width: 600;
+	text-align: left;
+}
+
+fieldset {
+	margin-top: 20px;
+}
+
+fieldset#aboutyou input {
+	display: block;
+}
+
+fieldset#influences input {
+	display: block;
+	width: 400px;
+}
+
+fieldset#parents input {
+	display: block;
+}
+
+#recipe {
+	Color: red;
+}

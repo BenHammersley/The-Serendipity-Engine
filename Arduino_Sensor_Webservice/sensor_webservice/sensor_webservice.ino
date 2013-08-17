@@ -117,6 +117,12 @@ void PerformRequestedCommands()
 void RemoteAnalogRead()
 {
 
+    server.println("HTTP/1.1 200 OK");
+    server.println("Content-Type: text/html"); // Ensure the correct mime-type for the output
+    server.println("Connection: close");  // the connection will be closed after completion of the response
+    server.println();
+
+
   if ( strcmp(param1,"all") == 0 )
 	{
 		server.print("<html><head><title>Sensor Data</title></head><body>");
@@ -150,6 +156,11 @@ void RemoteAnalogRead()
 
 void RemoteAnalogReadXML()
 {
+	
+    server.println("HTTP/1.1 200 OK");
+    server.println("Content-Type: application/xml"); // Ensure the correct mime-type for the output
+    server.println("Connection: close");  // the connection will be closed after completion of the response	
+	
   if ( strcmp(param1,"all") == 0 )
 	{
 		server.print("<xml>\n");
@@ -185,6 +196,11 @@ void RemoteAnalogReadXML()
 
 void RemoteAnalogReadJSON()
 {
+	
+    server.println("HTTP/1.1 200 OK");
+    server.println("Content-Type: application/json"); // Ensure the correct mime-type for the output
+    server.println("Connection: close");  // the connection will be closed after completion of the response
+	
   if ( strcmp(param1,"all") == 0 )
 	{
 		server.print("{\"");
@@ -223,7 +239,7 @@ void DisplayDebugPage()
           server.println("HTTP/1.1 200 OK");
           server.println("Content-Type: text/html");
           server.println("Connection: close");  // the connection will be closed after completion of the response
-	      server.println("Refresh: 1");  // refresh the page automatically every 5 sec
+	      server.println("Refresh: 1");  // refresh the page automatically every 1 sec
           server.println();
           server.println("<!DOCTYPE HTML>");
           server.println("<html>");

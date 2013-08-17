@@ -18,8 +18,7 @@
 
 // MAC address can be anything that is unique within your network.
 // IP is the address the Arduino Ethernet Card would respond to.  It needs to be an unused address within your network.
-byte mac[] = { 
-  0x90, 0xA2, 0xDA, 0x0D, 0xA7, 0xB9 };
+byte mac[] = {0x90, 0xA2, 0xDA, 0x0D, 0xA7, 0xB9 };
 IPAddress ip(192,168,0,177);
 IPAddress gateway(192,168,0,1);
 
@@ -204,16 +203,18 @@ void RemoteAnalogReadJSON()
     
   if ( strcmp(param1,"all") == 0 )
 	{
-		server.print("{\"");
+		server.print("{");
 		for (int analogChannel = 0; analogChannel < 6; analogChannel++) 
 			{
             // delay a little to let the sensors settle
             delay(10);
             int sensorReading = analogRead(analogChannel);
+		  server.print("\"");
 		  server.print(analogChannel, DEC);
 		  server.print("\":\"");
 		  server.print(sensorReading,DEC);
-		  server.print("\",");
+		  server.print("\"");
+		if (analogChannel < 5) { server.print(",");}
 			server.print("\n");   
             }	
 			server.print("}");

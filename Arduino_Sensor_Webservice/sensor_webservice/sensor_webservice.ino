@@ -109,6 +109,7 @@ void PerformRequestedCommands()
 {
   if ( strcmp(cmd,"analogRead") == 0 ) RemoteAnalogRead();
   if ( strcmp(cmd,"analogReadXML") == 0 ) RemoteAnalogReadXML();
+  if ( strcmp(cmd,"analogReadJSON") == 0 ) RemoteAnalogReadJSON();
   if ( strcmp(cmd,"debug") == 0 ) DisplayDebugPage();
 }
 
@@ -151,7 +152,7 @@ void RemoteAnalogReadXML()
 {
   if ( strcmp(param1,"all") == 0 )
 	{
-		server.print("<xml>");
+		server.print("<xml>\n");
 		for (int analogChannel = 0; analogChannel < 6; analogChannel++) 
 			{
             // delay a little to let the sensors settle
@@ -182,6 +183,40 @@ void RemoteAnalogReadXML()
    }
 }
 
+void RemoteAnalogReadJSON()
+{
+  if ( strcmp(param1,"all") == 0 )
+	{
+		server.print("{\"");
+		for (int analogChannel = 0; analogChannel < 6; analogChannel++) 
+			{
+            // delay a little to let the sensors settle
+            delay(10);
+            int sensorReading = analogRead(analogChannel);
+		  server.print(analogChannel, DEC);
+		  server.print("\":\"");
+		  server.print(sensorReading,DEC);
+		  server.print("\",");
+			server.print("\n");   
+            }	
+			server.print("}");
+			}
+	else 
+	{
+  int analogPin = param1[0] - '0'; // Param1 should be one digit analog port
+  int analogValue = analogRead(analogPin);
+  
+  //-- Send response back to browser --
+  server.print("{\"");
+  server.print(analogPin, DEC);
+  server.print("\":\"");
+  server.print(analogValue,DEC);
+  server.print("\"}");
+
+   }
+}
+
+
 
 void DisplayDebugPage()
 {
@@ -201,8 +236,12 @@ void DisplayDebugPage()
           server.println("<p><code>http://x.x.x.x/analogRead/1</code> will give you the human readable value of the analog pin 1.</p>");
           server.println("<p><code>http://x.x.x.x/analogRead/all</code> will give you the human readable values of all of the analog pins.</p>");
 
+          server.println("<p><code>http://x.x.x.x/analogReadXML/1</code> and <code>http://x.x.x.x/analogReadXML/all</code> will give you the same but in XML</p>");
 
-          server.println("<h2>Analog Inputs</h2>");
+          server.println("<p><code>http://x.x.x.x/analogReadJSON/1</code> and <code>http://x.x.x.x/analogReadJSON/all</code> will give you the same but in JSON</p>");
+
+
+          server.println("<h2>Live Analog Inputs</h2>");
 
           // output the value of each analog input pin
           for (int analogChannel = 0; analogChannel < 6; analogChannel++) {

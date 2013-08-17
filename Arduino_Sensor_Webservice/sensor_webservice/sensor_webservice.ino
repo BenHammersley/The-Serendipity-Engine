@@ -1,15 +1,14 @@
 /*
- Arduino Data Web Server, based on the original version here:
+ Arduino Sensor Webservice, created August 17, 2013, by Ben Hammersley.
+
+ Based on an original version here:
  http://forum.arduino.cc/index.php/topic,6595.0.html#0
  created Sept 17, 2010 by Hari Wiguna, g33k.blogspot.com
+ 
 
- This version, created August 17, 2013, by Ben Hammersley
-
- Performs actions on Arduino and/or returns data from Arduino to a webbrowser request URL:
-- To turn on LED on pin 8, use web browser to visit your Arduino via: http://x.x.x.x/digitalWrite/7/1
-- To turn it off send: http://x.x.x.x/digitalWrite/7/0
-- To read analog0 value, send: http://x.x.x.x/analogRead/0
-
+ Be sure to set the MAC address of your ethernet shield, and the correct ip and gateway values, below.
+  
+ Visit http://x.x.x.x/debug/ for live human-readable data and further usage instructions
 
 */
 
@@ -160,7 +159,8 @@ void RemoteAnalogReadXML()
     server.println("HTTP/1.1 200 OK");
     server.println("Content-Type: application/xml"); // Ensure the correct mime-type for the output
     server.println("Connection: close");  // the connection will be closed after completion of the response	
-	
+	server.println();
+    
   if ( strcmp(param1,"all") == 0 )
 	{
 		server.print("<xml>\n");
@@ -200,7 +200,8 @@ void RemoteAnalogReadJSON()
     server.println("HTTP/1.1 200 OK");
     server.println("Content-Type: application/json"); // Ensure the correct mime-type for the output
     server.println("Connection: close");  // the connection will be closed after completion of the response
-	
+	server.println();
+    
   if ( strcmp(param1,"all") == 0 )
 	{
 		server.print("{\"");

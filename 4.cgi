@@ -144,6 +144,7 @@ print <<EOM;
 <p>SUITCASE MADNESS</p>
 <p>$suitcaseJSON</p>
 <p>$decodedJSON</p>
+<p>Values</p>
 <p>$switchzero</p>
 <p>$switchone</p>
 <p>$switchtwo</p>

@@ -108,7 +108,7 @@ my $switchtwo   = $decodedJSON->{"2"};
 my $switchthree = $decodedJSON->{"3"};
 my $switchfour  = $decodedJSON->{"4"};
 
-if ($switchzero == 1023) { my $switchzerotext = "You chose France.";}
+if ($switchzero == "1023") { my $switchzerotext = "You chose France.";}
 if ($switchzero < 500) { my $switchzerotext = "You chose Spain.";}
 
 

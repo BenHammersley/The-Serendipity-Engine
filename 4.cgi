@@ -5,6 +5,8 @@ use IMDB::Film;
 use Lyrics::Fetcher;
 use WWW::Wikipedia;
 use Lingua::Translate;
+use JSON qw( decode_json );
+use LWP::Simple;
 use Lingua::StopWords qw(getStopWords);
 use List::Util qw/shuffle/;
 #use Device::SerialPort;
@@ -87,7 +89,23 @@ my $chosenwords = 4;
 my @chosen = (shuffle(@words))[0..$chosenwords-1];
 my $displaytext = join ' ', grep { !$stopwords->{$_} } @chosen;
 
-# 9600, 81N on the USB ftdi driver
+
+#######
+## Access the Suitcase Arduino
+#######
+
+# Not happy about this fixed IP here, but hey ho
+my $suitcaseJSON = get("http://192.168.0.177/analogReadJSON/all");
+my $suitcasetext = "You would benefit from paying more attention to the suitcase." unless defined $suitcaseJSON;
+
+my $decodedJSON = decode_json($suitcaseJSON);
+
+# I'm guess here, before I go and get some midget gems
+my $switchzero = $decoded->{'0'};
+
+
+
+ç 9600, 81N on the USB ftdi driver
 #$port->baudrate(9600); # you may change this value
 #$port->databits(8); # but not this and the two following
 #$port->parity("none");

@@ -7,8 +7,8 @@ use WWW::Wikipedia;
 use Lingua::Translate;
 use Lingua::StopWords qw(getStopWords);
 use List::Util qw/shuffle/;
-use Device::SerialPort;
-my $port = Device::SerialPort->new("/dev/tty.usbmodem1a21");
+#use Device::SerialPort;
+#my $port = Device::SerialPort->new("/dev/tty.usbmodem1a21");
 
 
 my $cgi = CGI->new();
@@ -88,21 +88,21 @@ my @chosen = (shuffle(@words))[0..$chosenwords-1];
 my $displaytext = join ' ', grep { !$stopwords->{$_} } @chosen;
 
 # 9600, 81N on the USB ftdi driver
-$port->baudrate(9600); # you may change this value
-$port->databits(8); # but not this and the two following
-$port->parity("none");
-$port->stopbits(1);
+#$port->baudrate(9600); # you may change this value
+#$port->databits(8); # but not this and the two following
+#$port->parity("none");
+#$port->stopbits(1);
 
 
-$port->write("Hello $name \n\n\n");
-$port->write("Your Serendipity\n");
-$port->write("Recipe Is\n\n\n");
-$port->write("$displaytext\n");
+#$port->write("Hello $name \n\n\n");
+#$port->write("Your Serendipity\n");
+#$port->write("Recipe Is\n\n\n");
+#$port->write("$displaytext\n");
 
-$port->write("Think about this\n");
-$port->write("$location\n");
-$port->write("$context1\n");
-$port->write("$context2\n");
+#$port->write("Think about this\n");
+#$port->write("$location\n");
+#$port->write("$context1\n");
+#$port->write("$context2\n");
 
 
 print "Content-type: text/html\n\n";

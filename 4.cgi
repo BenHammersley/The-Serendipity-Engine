@@ -57,13 +57,13 @@ my $msubjectsummary = $fwikiobj->text();
 my @msubjectwords = ($msubjectsummary =~ /(\w+)/g);
 my $tenmsubjectwords = join ' ', @msubjectwords[30..35];
 
-my @locations = ('showering', 'flying', 'home', 'walking');
+my @locations = ('at a cafe', 'while flying', 'at home', 'at a gym', 'in a street you have never been before', 'in a familiar place', 'in a public place', 'in a field', 'at a friends');
 my $location = $locations[int rand($#locations)];
 
-my @context1s = ('with friends', 'alone', 'with strangers');
+my @context1s = ('with friends', 'alone', 'with strangers', 'with family', 'with a secret crush', 'with a shopkeeper', 'with a pet', 'with an acquaintance', 'with an unrequited love', 'with an enemy', 'with a person with violet eyes');
 my $context1 = $context1s[int rand($#context1s)];
 
-my @context2s = ('drinking', 'smoking', 'kissing');
+my @context2s = ('drinking', 'smoking', 'kissing', 'exercising', 'dancing', 'starting into space','sleeping','walking a friendly dog','playing an instrument','having a coffee', 'looking in the mirror', 'mediatating', 'tidying');
 my $context2 = $context2s[int rand($#context2s)];
 
 my @lowhigh = ('LOW', 'HIGH', 'WANTING');
@@ -109,6 +109,8 @@ my $switchthree = $decodedJSON->{"3"};
 my $switchfour  = $decodedJSON->{"4"};
 
 
+
+
 #$port->baudrate(9600); # you may change this value
 #$port->databits(8); # but not this and the two following
 #$port->parity("none");
@@ -135,16 +137,8 @@ print <<EOM;
 <body>
 <h1>Your Serendipity Recipe</h1>
 <p>Hello, $name. Thank you for using the Serendipity Engine. Based on an analysis of your answers to the questions, plus your selections in the suitcase, the Serendipity Engine has determined that you are $lowhigh1 in social support, $lowhigh2 in creativity, $lowhigh3 in physical well being. You are $lowhigh3 in Head-RAM(tm), $lowhigh1 in attention and $lowhigh2 in access to knowledge. You are $lowhigh1 in Grit.</p>
-<p>In addition, the Engine's Human Task Force has identified, based on your portrait and your drawings, your level of personal attractiveness and elegance. A more detailed breakdown of the ingredients of your personal Serendipity recipe can be retrieved at TheSerendipityEngine.com.</p><p>It prescribes the following tailor-made Serendipity Recipe to be considered $location, $context1 $context2:</p>
-<p>SUITCASE MADNESS</p>
-<p>$suitcaseJSON</p>
-<p>$decodedJSON</p>
-<p>Values</p>
-<p>$switchzero</p>
-<p>$switchone</p>
-<p>$switchtwo</p>
-<p>$switchthree</p>
-<p>$switchfour</p>
+<p>In addition, the Engine's Human Task Force has identified, based on your portrait and your drawings, your level of personal attractiveness and elegance. A more detailed breakdown of the ingredients of your personal Serendipity recipe can be retrieved at TheSerendipityEngine.com.</p><p>It prescribes the following tailor-made Serendipity Recipe to be considered $location, while $context1 $context2:</p>
+
 
 <h2></h2>
 <div id="recipe">

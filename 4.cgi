@@ -102,11 +102,11 @@ my $json = JSON::PP->new;
 my $decodedJSON = $json->decode($suitcaseJSON);
 
 # I'm guess here, before I go and get some midget gems
-my $switchzero  = $decoded->{0};
-my $switchone   = $decoded->{1};
-my $switchtwo   = $decoded->{2};
-my $switchthree = $decoded->{3};
-my $switchfour  = $decoded->{4};
+my $switchzero  = $decodedJSON->{"0"};
+my $switchone   = $decodedJSON->{"1"};
+my $switchtwo   = $decodedJSON->{"2"};
+my $switchthree = $decodedJSON->{"3"};
+my $switchfour  = $decodedJSON->{"4"};
 
 
 #$port->baudrate(9600); # you may change this value

@@ -105,7 +105,6 @@ my $switchzero = $decoded->{'0'};
 
 
 
-ç 9600, 81N on the USB ftdi driver
 #$port->baudrate(9600); # you may change this value
 #$port->databits(8); # but not this and the two following
 #$port->parity("none");

@@ -5,7 +5,7 @@ use IMDB::Film;
 use Lyrics::Fetcher;
 use WWW::Wikipedia;
 use Lingua::Translate;
-use JSON qw( decode_json );
+use JSON::PP;
 use LWP::Simple;
 use Lingua::StopWords qw(getStopWords);
 use List::Util qw/shuffle/;
@@ -98,10 +98,19 @@ my $displaytext = join ' ', grep { !$stopwords->{$_} } @chosen;
 my $suitcaseJSON = get("http://192.168.0.177/analogReadJSON/all/");
 my $suitcasetext = "You would benefit from paying more attention to the suitcase." unless defined $suitcaseJSON;
 
-my $decodedJSON = decode_json($suitcaseJSON);
+my $json = JSON::PP->new;
+my $decodedJSON = $json->decode(<$suitcaseJSON>);
 
 # I'm guess here, before I go and get some midget gems
+<<<<<<< HEAD
 my $switchzero = %decoded=>{0};
+=======
+my $switchzero  = $decoded->{'0'};
+my $switchone   = $decoded->{'1'};
+my $switchtwo   = $decoded->{'2'};
+my $switchthree = $decoded->{'3'};
+my $switchfour  = $decoded->{'4'};
+>>>>>>> e4d6e45e92350f9465031039c5099c1786da4b91
 
 
 
@@ -136,6 +145,11 @@ print <<EOM;
 <p>$suitcaseJSON</p>
 <p>$decodedJSON</p>
 <p>$switchzero</p>
+<p>$switchone</p>
+<p>$switchtwo</p>
+<p>$switchthree</p>
+<p>$switchfour</p>
+
 <h2></h2>
 <div id="recipe">
 <p>$displaytext</p>

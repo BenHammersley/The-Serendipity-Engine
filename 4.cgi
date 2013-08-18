@@ -132,6 +132,8 @@ print <<EOM;
 <h1>Your Serendipity Recipe</h1>
 <p>Hello, $name. Thank you for using the Serendipity Engine. Based on an analysis of your answers to the questions, plus your selections in the suitcase, the Serendipity Engine has determined that you are $lowhigh1 in social support, $lowhigh2 in creativity, $lowhigh3 in physical well being. You are $lowhigh3 in Head-RAM(tm), $lowhigh1 in attention and $lowhigh2 in access to knowledge. You are $lowhigh1 in Grit.</p>
 <p>In addition, the Engine's Human Task Force has identified, based on your portrait and your drawings, your level of personal attractiveness and elegance. A more detailed breakdown of the ingredients of your personal Serendipity recipe can be retrieved at TheSerendipityEngine.com.</p><p>It prescribes the following tailor-made Serendipity Recipe to be considered $location, $context1 $context2:</p>
+<p>SUITCASE MADNESS</p>
+<p>$switchzero</p>
 <h2></h2>
 <div id="recipe">
 <p>$displaytext</p>

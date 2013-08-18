@@ -85,7 +85,7 @@ print <<EOM;
 		<p>If the cake is from France, then it has more sugar if it is made with chocolate than if it is made with cream, but if the cake is from Spain, then it has more sugar if it is made with cream than if it is made with chocolate.</p>
 	</fieldset>
 	
-	<button type=submit formaction="4.cgi">Now proceed to Suitcase 2. When you have set the switches, press me to continue</button>
+	<button type=submit formaction="4.cgi">Now proceed to the suitcase. When you have set the switches, press me to continue</button>
 	
 	</form>
 				

@@ -95,7 +95,7 @@ my $displaytext = join ' ', grep { !$stopwords->{$_} } @chosen;
 #######
 
 # Not happy about this fixed IP here, but hey ho
-my $suitcaseJSON = get("http://192.168.0.177/analogReadJSON/all/");
+my $suitcaseJSON = get("http://192.168.2.177/analogReadJSON/all/");
 my $suitcasetext = "You would benefit from paying more attention to the suitcase." unless defined $suitcaseJSON;
 
 my $json = JSON::PP->new;

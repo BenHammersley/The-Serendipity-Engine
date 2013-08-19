@@ -169,7 +169,7 @@ print <<EOM;
 <link rel="stylesheet" type="text/css" href="styles.css"/>
 <body>
 <h1>Your Serendipity Recipe</h1>
-<p>Hello, $name. Thank you for using the Serendipity Engine. Based on an analysis of your answers to the questions, plus your selections in the suitcase, the Serendipity Engine has determined that you are $lowhigh1 in social support, $lowhigh2 in creativity, $lowhigh3 in physical well being. You are $lowhigh3 in Head-RAM(tm), $lowhigh1 in attention and $lowhigh2 in access to knowledge. You are $lowhigh1 in Grit. Do not worry about any of this. Think on it.</p>
+<p>Hello, $name. Thank you for using the Serendipity Engine. Based on an analysis of your answers to the questions, plus your selections in the suitcase, the Serendipity Engine has determined that you are $lowhigh1 in social support, $lowhigh2 in creativity, $lowhigh3 in physical well being. You are $lowhigh3 in Head-RAM(tm), $lowhigh1 in attention and $lowhigh2 in access to knowledge. You are $lowhigh1 in Grit. Do not worry about any of this. Think on it. And go to theserendipityengine.com to find out more about these scales.</p>
 
 <p>$switchzerotext $switchonetext $switchtwotext $switchthreetext</p>
 

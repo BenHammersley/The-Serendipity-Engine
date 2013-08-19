@@ -19,8 +19,8 @@
 // MAC address can be anything that is unique within your network.
 // IP is the address the Arduino Ethernet Card would respond to.  It needs to be an unused address within your network.
 byte mac[] = {0x90, 0xA2, 0xDA, 0x0D, 0xA7, 0xB9 };
-IPAddress ip(192,168,0,177);
-IPAddress gateway(192,168,0,1);
+IPAddress ip(192,168,2,177);
+//IPAddress gateway(192,168,0,1);
 
 EthernetServer server(80); // Port 80 is http.
 
@@ -33,7 +33,7 @@ char param2[15];
 
 void setup()
 {
-  Ethernet.begin(mac, ip);
+  Ethernet.begin(mac,ip);
   server.begin();
 
   Serial.begin(57600);

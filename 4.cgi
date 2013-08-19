@@ -112,9 +112,9 @@ my $switchzerotext = "This is unset.";
 
 if ($switchzero > 500) 
 	{ 
-	my $switchzerotext = "You chose France.";
+	$switchzerotext = "You chose France.";
 	}	else	{ 
-	my $switchzerotext = "You chose Spain.";
+	$switchzerotext = "You chose Spain.";
 	}
 
 

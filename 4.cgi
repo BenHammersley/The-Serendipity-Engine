@@ -108,7 +108,11 @@ my $switchtwo   = $decodedJSON->{"2"};
 my $switchthree = $decodedJSON->{"3"};
 my $switchfour  = $decodedJSON->{"4"};
 
-my $switchzerotext = "This is unset.";
+my $switchzerotext = "You are unclear.";
+my $switchonetext = "You are confused.";
+my $switchtwotext = "You are giving me mixed signals.";
+my $switchthreetext = "You are befuddling.";
+
 
 if ($switchzero > 500) 
 	{ 

@@ -117,6 +117,27 @@ if ($switchzero > 500)
 	$switchzerotext = "You chose Spain.";
 	}
 
+if ($switchone > 500) 
+	{ 
+	$switchonetext = "You need more sleep.";
+	}	else	{ 
+	$switchonetext = "You feel perky.";
+	}
+
+if ($switchtwo > 500) 
+	{ 
+	$switchtwotext = "You might be feeling a little jittery. Try to relax.";
+	}	else	{ 
+	$switchtwotext = "You're more of a tea person, huh?";
+	}
+
+if ($switchthree > 500) 
+	{ 
+	$switchthreetext = "You're a natural optimist. This is good.";
+	}	else	{ 
+	$switchthreetext = "You inspire with your grit and tenacity.";
+	}
+
 
 
 #$port->baudrate(9600); # you may change this value
@@ -145,10 +166,7 @@ print <<EOM;
 <body>
 <h1>Your Serendipity Recipe</h1>
 <p>Hello, $name. Thank you for using the Serendipity Engine. Based on an analysis of your answers to the questions, plus your selections in the suitcase, the Serendipity Engine has determined that you are $lowhigh1 in social support, $lowhigh2 in creativity, $lowhigh3 in physical well being. You are $lowhigh3 in Head-RAM(tm), $lowhigh1 in attention and $lowhigh2 in access to knowledge. You are $lowhigh1 in Grit.</p>
-<p>$switchzero $switchzerotext</p>
-<p>$switchone</p>
-<p>$switchtwo</p>
-<p>$swittchthree</p>
+<p>$switchzerotext $switchonetext $switchtwotext $swittchthreetext</p>
 <p>In addition, the Engine's Human Task Force has identified, based on your portrait and your drawings, your level of personal attractiveness and elegance. A more detailed breakdown of the ingredients of your personal Serendipity recipe can be retrieved at TheSerendipityEngine.com.</p><p>It prescribes the following tailor-made Serendipity Recipe to be considered $location, while $context1 $context2:</p>
 
 

@@ -116,9 +116,9 @@ my $switchthreetext = "You are befuddling.";
 
 if ($switchzero > 500) 
 	{ 
-	$switchzerotext = "You chose France. That might be an answer in itself.";
+	$switchzerotext = "Have you ever read Sartre? You would probably think he is overrated. That might be an answer in itself.";
 	}	else	{ 
-	$switchzerotext = "You chose Spain. The Serendipity Engine wonders if you have a connection to Spain in some way?";
+	$switchzerotext = "The Serendipity Engine wonders if you have a connection to Spain in some way?";
 	}
 
 if ($switchone > 500) 

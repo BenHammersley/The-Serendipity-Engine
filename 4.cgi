@@ -112,12 +112,9 @@ my $switchzerotext = "This is unset.";
 
 if ($switchzero > 500) 
 	{ 
-	my $switchzerotext == "You chose France.";
-	}
-	
-if ($switchzero < 500) 
-	{ 
-	my $switchzerotext == "You chose Spain.";
+	my $switchzerotext = "You chose France.";
+	}	else	{ 
+	my $switchzerotext = "You chose Spain.";
 	}
 
 
@@ -151,7 +148,7 @@ print <<EOM;
 <p>$switchzero $switchzerotext</p>
 <p>$switchone</p>
 <p>$switchtwo</p>
-<p>$swtichthree</p>
+<p>$swittchthree</p>
 <p>In addition, the Engine's Human Task Force has identified, based on your portrait and your drawings, your level of personal attractiveness and elegance. A more detailed breakdown of the ingredients of your personal Serendipity recipe can be retrieved at TheSerendipityEngine.com.</p><p>It prescribes the following tailor-made Serendipity Recipe to be considered $location, while $context1 $context2:</p>
 
 
